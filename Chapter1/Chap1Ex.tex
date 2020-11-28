@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=2cm,right=2cm,top=1.54cm,bottom=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\begin{document}
+\title{ Solutions to Chapter 1 exercises in "A Book of Abstract Algebra" by Pinto }
+
+\date{\today}
+\maketitle
+\begin{flushleft}
+
+
+\section*{A. Examples of Operations}
+
+Which of the following rules are operations on the indicated set? ($\mathbb{Z}$ designates the set of integers, $\mathbb{Q}$ the rational numbers, and $\mathbb{R}$ the real numbers.) For each rule which is not an operation, explain why it is not.
+
+\begin{enumerate}
+
+
+
+\item $a * b = \sqrt{|ab|}$, on the set $\mathbb{Q}$.
+\item $a * b = a~\text{ln}~b$, on the set $\{x \in \mathbb{R}: x > 0\}$.
+\item $a * b$ is a root of the equation $x^{2} - a^{2}b^{2} = 0$, on the set $\mathbb{R}$.
+\item Subtraction, on the set $\mathbb{Z}$.
+\item Subtraction, on the set $\{ n \in \mathbb{Z}:n \geq 0 \}$.
+\item $a * b = |a-b|$, on the set $\{ n \in \mathbb{Z}: n \geq 0 \}$.
+
+\end{enumerate}
+
+\textit{Solution} \\
+\begin{enumerate}
+\item This is not an operation on $\mathbb{Q}$ because $a * b$ is not uniquely identified and $\mathbb{Q}$ is not closed under $*$. If $a$ and $b$ are rational numbers they can be written as $a = \frac{c}{d}$ and $b = \frac{e}{f}$ where $c, d, e, \text{and} f$ are integers, $d \neq 0$, and $f \neq 0$. If we let $c = 2$, $d = 1$, $e = 2$, and $f = 1$ then
+
+$$ \sqrt{ \frac{2}{1} \cdot \frac{2}{1} } = \sqrt{ 2 \cdot 2 } = \sqrt{4}$$  
+
+and since $ \sqrt{4} = \pm 2$ we see that $a * b$ is not uniquely identified. Now let $c = 3$, $d = 1$, $e = 2$, and $f = 1$ then
+
+$$ \sqrt{ \frac{3}{1} \cdot \frac{2}{1} } = \sqrt{6}   $$
+
+and we see that there is no rational number $f$ such that $f \cdot f = 6$, therefore $\sqrt{6}$ is not a rational number. Thus, $\mathbb{Q}$ is not closed under $*$.
+
+\item This is not an operation on the set $\{x \in \mathbb{R}: x > 0\}$ because the set $\{x \in \mathbb{R}: x > 0\}$ is not closed under $*$. For example, if we let $a = 2$ and $b = 1$ then
+
+$$ a~\text{ln}~b = 2~\text{ln}~1 = 0$$
+
+and $ 0 \notin \{x \in \mathbb{R}: x > 0\}$. Therefore the set $\{x \in \mathbb{R}: x > 0\}$ is not closed under $*$ and $*$ is not an operation on the set $\{x \in \mathbb{R}: x > 0\}$.
+
+\item This is not an operation on $mathbb{R}$ because $a * b$ is not uniquely identified.
+
+\end{enumerate}
+
+
+
+
+
+
+\end{flushleft}
+\end{document}
+ 
