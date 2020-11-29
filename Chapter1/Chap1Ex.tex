@@ -4,6 +4,8 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 
 \begin{document}
@@ -88,23 +90,29 @@ Each of the following is an operation $*$ on $\mathbb{R}$. Indicate whether or n
 \renewcommand{\theenumi}{\arabic{enumi}}
 \begin{enumerate}
 
-\item $x *y = \sqrt{x^2 + y^2}$
-
+\item $x * y = \sqrt{x^2 + y^2}$
+\item $x * y = \abs{ x + y }$
+\item $x * y = \abs{ xy }$
+\item $x * y = x - y $
+\item $x * y = xy + 1 $
+\item $x * y = \text{max}\{x,y\}$
+\item $x * y = \frac{xy}{x + y + 1}$
 \end{enumerate}
 
 \textit{Solution}
 
 \begin{enumerate}
 
-\item 
+\item
 \begin{tabular}{c c c c}
 \textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ \\
+Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ \\
 \end{tabular}
 \end{enumerate}
 \renewcommand{\theenumi}{(\roman{enumi})}
 \begin{enumerate}
-\item $x *y = \sqrt{x^2 + y^2}$; $ y *x = \sqrt{y^2 + x^2} = \sqrt{x^2 + y^2}$ because $+$ is a commutative operation on $\mathbb{R}$ \\
+\item $x *y = \sqrt{x^2 + y^2}$ \\
+ $ y *x = \sqrt{y^2 + x^2} = \sqrt{x^2 + y^2}$ because $+$ is a commutative operation on $\mathbb{R}$ \\
 (\textit{Thus $*$ is commutative.})
 \item $x * \left( y * z \right) = x *\left(\sqrt{y^2 + z^2} \right) = \sqrt{x^2 + \left(\sqrt{y^2 + z^2} \right)^2} = \sqrt{x^2 + y^2 + z^2}$ \\
 $\left( x * y \right) * z = \sqrt( x^2 + y^2 ) * z = \sqrt{\left( \sqrt{x ^2 + y^2} \right)^2 + z^2} = \sqrt{x^2 + y^2 + z^2}$ \\
@@ -113,11 +121,94 @@ $\left( x * y \right) * z = \sqrt( x^2 + y^2 ) * z = \sqrt{\left( \sqrt{x ^2 + y
 Check: $x * 0 = \sqrt{x^2 + 0} = \sqrt{x^2} = x$; $0 *x = \sqrt{0 + x^2} = \sqrt{x^2} = x$ \\
 Therefore, $0$ is the identity element. \\
 (\textit{$*$ has an identity element})
+\item Solve $x * x^{'} = e$ for $x^{'}$.
+
+\begin{align*}
+x * x^{'} &= e \\
+\sqrt{x^2 + {x^{'}}^{2}} &= 0 \\
+x^{'} &= \sqrt{-x^2} \\
+x^{'} &= \pm ix
+\end{align*}
+
+where $i$ is the imaginary unit.
+
+Now check that $x * x^{'} = x^{'} * x = e$. 
+
+If $x^{'} = ix$ then 
+
+\begin{align*}
+x * x^{'} &= \sqrt{x^2 + (xi)^2} \\
+&= \sqrt{x^2 + (x^2 \cdot i^2)} \\
+&= \sqrt{x^2(1+i^2)} \\
+&= \sqrt{x^2(1+(-1))} \\
+&= \sqrt{x^2 \cdot 0} = 0
+\end{align*}
+
+and
+
+\begin{align*}
+x^{'} * x &= \sqrt{(xi)^2 + x^2} \\
+&= \sqrt{(x^2 \cdot i^2) + x^2} \\
+&= \sqrt{(1+i^2)x^2} \\
+&= \sqrt{(1+(-1))x^2} \\
+&= \sqrt{0 \cdot x^2 } = 0
+\end{align*}
+
+If $x^{'} = -ix$ then 
+
+\begin{align*}
+x * x^{'} &= \sqrt{x^2 + (-xi)^2} \\
+&= \sqrt{x^2 + (xi)^2} ~~~~~~~~  \text{exponent rule:}~(-a)^n = a^n, \text{if} ~n ~\text{is even}\\
+&= \sqrt{x^2 + (x^2 \cdot i^2)} \\
+&= \sqrt{x^2(1+i^2)} \\
+&= \sqrt{x^2(1+(-1))} \\
+&= \sqrt{x^2 \cdot 0} = 0
+\end{align*}
+
+and
+
+\begin{align*}
+x^{'} * x &= \sqrt{(-xi)^2 + x^2} \\
+&= \sqrt{(xi)^2 + x^2}  ~~~~~~~~  \text{exponent rule:}~(-a)^n = a^n, \text{if} ~n ~\text{is even}\\
+&= \sqrt{(x^2 \cdot i^2) + x^2} \\
+&= \sqrt{(1+i^2)x^2} \\
+&= \sqrt{(1+(-1))x^2} \\
+&= \sqrt{0 \cdot x^2 } = 0
+\end{align*}
+
+Therefore, $\pm ix$ is the inverse of x. \\
+(\textit{Every element has an inverse})
+
+\end{enumerate}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\begin{enumerate}\addtocounter{enumi}{1}
+
+\item 
+\begin{tabular}{c c c c}
+\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ \\
+\end{tabular}
+\end{enumerate}
+
+\renewcommand{\theenumi}{(\roman{enumi})}
+\begin{enumerate} 
+\item
+
 \end{enumerate}
 
 
 
 
+
+
+
+
+
 \end{flushleft}
+
+
+
+
 \end{document}
  
