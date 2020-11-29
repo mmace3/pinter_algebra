@@ -111,16 +111,20 @@ Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No
 \end{enumerate}
 \renewcommand{\theenumi}{(\roman{enumi})}
 \begin{enumerate}
+
 \item $x *y = \sqrt{x^2 + y^2}$ \\
  $ y *x = \sqrt{y^2 + x^2} = \sqrt{x^2 + y^2}$ because $+$ is a commutative operation on $\mathbb{R}$ \\
 (\textit{Thus $*$ is commutative.})
+
 \item $x * \left( y * z \right) = x *\left(\sqrt{y^2 + z^2} \right) = \sqrt{x^2 + \left(\sqrt{y^2 + z^2} \right)^2} = \sqrt{x^2 + y^2 + z^2}$ \\
 $\left( x * y \right) * z = \sqrt( x^2 + y^2 ) * z = \sqrt{\left( \sqrt{x ^2 + y^2} \right)^2 + z^2} = \sqrt{x^2 + y^2 + z^2}$ \\
 (\textit{Thus $*$ is associative.})
+
 \item Solve $x*e= x$ for $x$: $\sqrt{x^2 + e^2} = x$ therefore $e = 0$. \\
 Check: $x * 0 = \sqrt{x^2 + 0} = \sqrt{x^2} = x$; $0 *x = \sqrt{0 + x^2} = \sqrt{x^2} = x$ \\
 Therefore, $0$ is the identity element. \\
 (\textit{$*$ has an identity element})
+
 \item Solve $x * x^{'} = e$ for $x^{'}$.
 
 \begin{align*}
@@ -193,8 +197,37 @@ Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\boxtimes$ No
 
 \renewcommand{\theenumi}{(\roman{enumi})}
 \begin{enumerate} 
-\item
+\item $x * y = \abs{x + y}$ \\
+$y * x = \abs{y + x} = \abs{x + y}$  because $+$ is a commutative operation on $\mathbb{R}$ \\
+(\textit{Thus $*$ is commutative.})
 
+\item 
+$x * (y * z) = x * \abs{y + z} = \abs{x + \abs{y + z}}$ \\
+Let $x = -5$, $ y = 10$, and $z = -20$, then \\
+$\abs{-5 + \abs{10-20}} = \abs{-5 + \abs{-10}} = \abs{-5 + 10} = \abs{5} = 5$ \\
+$(x * y) * z = \abs{x + y} * z = \abs{\abs{x + y} + z}$ \\
+Again, let $x = -5$, $ y = 10$, and $z = -20$, then \\
+$\abs{\abs{-5 + 10}-20} = \abs{\abs{5}-20} = \abs{5-20} = \abs{-15} = 15$ \\
+Since $5 \neq 15$ then $*$ is not associative on $\mathbb{R}$
+
+\item Solve $x*e=x$ for $e$: ~~~ $\abs{x + e} = x \Rightarrow e = 0$ \\
+Check: $x * 0 = \abs{x + 0} = x$; $0 * x = \abs{0 + x} = \abs{x} = x$. \\
+Therefore $0$ is the identity element.
+
+\item Solve $x * x^{'} = 0$ for $x^{'}$: ~~~~ $\abs{x + x^{'}} = 0 \Rightarrow x^{'} = -x$ \\
+Check: $x * x^{'} = \abs{x - x} = 0$ \\
+$x^{'} * x = \abs{-x + x} = 0$. Therefore, $-x$ is the inverse of $x$.
+
+\end{enumerate}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\begin{enumerate}\addtocounter{enumi}{2}
+
+\item 
+\begin{tabular}{c c c c}
+\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ \\
+\end{tabular}
 \end{enumerate}
 
 
