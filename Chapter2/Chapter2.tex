@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
+\renewcommand{\labelenumi}{\theenumi}
 
 \begin{document}
 \title{ Chapter 2 - Operations }
@@ -87,119 +88,32 @@ Each of the following is an operation $*$ on $\mathbb{R}$. Indicate whether or n
 
 \textbf{Instructions} For (i), compute $x * y$ and $y * x$, and verify whether or not they are equal. For (ii), compute $x * (y * z)$ and $(x * y) * z$, and verify whether or not they are equal. For (iii), first solve the equation $x * e = x$ for $e$; if the equation cannot be solved, there is identity element. If it \textit{can} be solved, it is still necessary to check that $e * x = x * e = x$ for any $x \in \mathbb{R}$. If it checks, then $e$ is an identity element. For (iv), first not that it there is no identity element, there can be no inverses. If there is an identity element $e$, first solve the equation $x * x^{'} = e$ for $x^{'}$; if the equation cannot be solved, $x$ does not have an inverse. If it can be solved, check to make sure that $x * x^{'} = x^{'} * x = e$. If this checks, $x^{'}$ is the inverse of $x$.
 
-\renewcommand{\theenumi}{\arabic{enumi}}
+
+\renewcommand{\theenumi}{\arabic{enumi})}
 \begin{enumerate}
 
-\item $x * y = \sqrt{x^2 + y^2}$
-\item $x * y = \abs{ x + y }$
-\item $x * y = \abs{ xy }$
-\item $x * y = x - y $
-\item $x * y = xy + 1 $
-\item $x * y = \text{max}\{x,y\}$
-\item $x * y = \frac{xy}{x + y + 1}$
-\end{enumerate}
 
+
+\item $x * y = \sqrt{x^2 + y^2}$ \\
+\medskip
 \textit{Solution}
 
-\begin{enumerate}
+Although the instructions for this section state that $x * y = \sqrt{x^2 + y^2}$ is an operation on $\mathbb{R}$, I don't think it is an operation on  $\mathbb{R}$ because $\sqrt{x^2 + y^2}$ is not uniquely defined on $\mathbb{R}$. For example, if we let $x = 1$ and $y = 0$, then $x * y = \sqrt{1^2 + 0^2} = \sqrt{1} = (-1, 1)$ and we see that $\sqrt{x^2 + y^2}$ is not uniquely defined on $\mathbb{R}$. Therefore, $x * y = \sqrt{x^2 + y^2}$ is not an operation on $\mathbb{R}$. \\
 
-\item
+\item $x * y = \abs{ x + y }$ \\
+\medskip
+\textit{Solution}
+\medskip
+
 \begin{tabular}{c c c c}
 \textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ \\
+Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$  \\
 \end{tabular}
-\end{enumerate}
-\renewcommand{\theenumi}{(\roman{enumi})}
-\begin{enumerate}
 
-\item $x *y = \sqrt{x^2 + y^2}$ \\
- $ y *x = \sqrt{y^2 + x^2} = \sqrt{x^2 + y^2}$ because $+$ is a commutative operation on $\mathbb{R}$ \\
-(\textit{Thus $*$ is commutative.})
-
-\item $x * \left( y * z \right) = x *\left(\sqrt{y^2 + z^2} \right) = \sqrt{x^2 + \left(\sqrt{y^2 + z^2} \right)^2} = \sqrt{x^2 + y^2 + z^2}$ \\
-$\left( x * y \right) * z = \sqrt( x^2 + y^2 ) * z = \sqrt{\left( \sqrt{x ^2 + y^2} \right)^2 + z^2} = \sqrt{x^2 + y^2 + z^2}$ \\
-(\textit{Thus $*$ is associative.})
-
-\item Solve $x*e= x$ for $x$: $\sqrt{x^2 + e^2} = x$ therefore $e = 0$. \\
-Check: $x * 0 = \sqrt{x^2 + 0} = \sqrt{x^2} = x$; $0 *x = \sqrt{0 + x^2} = \sqrt{x^2} = x$ \\
-Therefore, $0$ is the identity element. \\
-(\textit{$*$ has an identity element})
-
-\item Solve $x * x^{'} = e$ for $x^{'}$.
-
-\begin{align*}
-x * x^{'} &= e \\
-\sqrt{x^2 + {x^{'}}^{2}} &= 0 \\
-x^{'} &= \sqrt{-x^2} \\
-x^{'} &= \pm ix
-\end{align*}
-
-where $i$ is the imaginary unit.
-
-Now check that $x * x^{'} = x^{'} * x = e$. 
-
-If $x^{'} = ix$ then 
-
-\begin{align*}
-x * x^{'} &= \sqrt{x^2 + (xi)^2} \\
-&= \sqrt{x^2 + (x^2 \cdot i^2)} \\
-&= \sqrt{x^2(1+i^2)} \\
-&= \sqrt{x^2(1+(-1))} \\
-&= \sqrt{x^2 \cdot 0} = 0
-\end{align*}
-
-and
-
-\begin{align*}
-x^{'} * x &= \sqrt{(xi)^2 + x^2} \\
-&= \sqrt{(x^2 \cdot i^2) + x^2} \\
-&= \sqrt{(1+i^2)x^2} \\
-&= \sqrt{(1+(-1))x^2} \\
-&= \sqrt{0 \cdot x^2 } = 0
-\end{align*}
-
-If $x^{'} = -ix$ then 
-
-\begin{align*}
-x * x^{'} &= \sqrt{x^2 + (-xi)^2} \\
-&= \sqrt{x^2 + (xi)^2} ~~~~~~~~  \text{exponent rule:}~(-a)^n = a^n, \text{if} ~n ~\text{is even}\\
-&= \sqrt{x^2 + (x^2 \cdot i^2)} \\
-&= \sqrt{x^2(1+i^2)} \\
-&= \sqrt{x^2(1+(-1))} \\
-&= \sqrt{x^2 \cdot 0} = 0
-\end{align*}
-
-and
-
-\begin{align*}
-x^{'} * x &= \sqrt{(-xi)^2 + x^2} \\
-&= \sqrt{(xi)^2 + x^2}  ~~~~~~~~  \text{exponent rule:}~(-a)^n = a^n, \text{if} ~n ~\text{is even}\\
-&= \sqrt{(x^2 \cdot i^2) + x^2} \\
-&= \sqrt{(1+i^2)x^2} \\
-&= \sqrt{(1+(-1))x^2} \\
-&= \sqrt{0 \cdot x^2 } = 0
-\end{align*}
-
-Therefore, $\pm ix$ is the inverse of x. \\
-(\textit{Every element has an inverse})
-
-\end{enumerate}
-
-\renewcommand{\theenumi}{\arabic{enumi}}
-\begin{enumerate}\addtocounter{enumi}{1}
-
-\item 
-\begin{tabular}{c c c c}
-\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ \\
-\end{tabular}
-\end{enumerate}
-
-\renewcommand{\theenumi}{(\roman{enumi})}
 \begin{enumerate} 
 \item $x * y = \abs{x + y}$ \\
 $y * x = \abs{y + x} = \abs{x + y}$  because $+$ is a commutative operation on $\mathbb{R}$ \\
-(\textit{Thus $*$ is commutative.})
+Therefore $*$ is commutative on $\mathbb{R}$.
 
 \item 
 $x * (y * z) = x * \abs{y + z} = \abs{x + \abs{y + z}}$ \\
@@ -210,25 +124,35 @@ Again, let $x = -5$, $ y = 10$, and $z = -20$, then \\
 $\abs{\abs{-5 + 10}-20} = \abs{\abs{5}-20} = \abs{5-20} = \abs{-15} = 15$ \\
 Since $5 \neq 15$ then $*$ is not associative on $\mathbb{R}$
 
-\item Solve $x*e=x$ for $e$: ~~~ $\abs{x + e} = x \Rightarrow e = 0$ \\
-Check: $x * 0 = \abs{x + 0} = x$; $0 * x = \abs{0 + x} = \abs{x} = x$. \\
-Therefore $0$ is the identity element.
+\item There is no identity element with respect to $*$ on $\mathbb{R}$ because there is no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. For example, if $a = -1$ there is no $e \in \mathbb{R}$ such that $\abs{e + (-1)} = -1$.  
 
-\item Solve $x * x^{'} = 0$ for $x^{'}$: ~~~~ $\abs{x + x^{'}} = 0 \Rightarrow x^{'} = -x$ \\
-Check: $x * x^{'} = \abs{x - x} = 0$ \\
-$x^{'} * x = \abs{-x + x} = 0$. Therefore, $-x$ is the inverse of $x$.
+
+\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
 
 \end{enumerate}
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\begin{enumerate}\addtocounter{enumi}{2}
 
-\item 
+\item $x * y = \abs{ xy }$ \\
+\medskip
+\textit{Solution}
+\medskip
+
 \begin{tabular}{c c c c}
 \textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
 Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ \\
 \end{tabular}
+
+
+\item $x * y = x - y $
+\item $x * y = xy + 1 $
+\item $x * y = \text{max}\{x,y\}$
+\item $x * y = \frac{xy}{x + y + 1}$
 \end{enumerate}
+
+
+%\begin{enumerate}\addtocounter{enumi}{2}
+
+
 
 
 
