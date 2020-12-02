@@ -3,7 +3,8 @@
 .RData
 .Ruserdata
 \Literature
-.aux
-.log
-.synctex.gz
-.gz
+*.aux
+*.log
+*.synctex.gz
+*.gz
+
