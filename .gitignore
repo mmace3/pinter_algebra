@@ -2,9 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
-\Literature
+Literature/
 *.aux
 *.log
 *.synctex.gz
 *.gz
+
 
