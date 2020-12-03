@@ -5,263 +5,259 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+
+
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 \renewcommand{\labelenumi}{\theenumi}
 
 \begin{document}
-\title{ Chapter 2 - Operations }
-
+\title{Chapter 2 - Operations}
 \date{\today}
 \maketitle
+
 \begin{flushleft}
-From "Book of Abstract Algebra" by Charles C. Pinter
+  From "Book of Abstract Algebra" by Charles C. Pinter
+  \section*{A. Examples of Operations}
+  Which of the following rules are operations on the indicated set? ($\mathbb{Z}$ 
+  designates the set of integers, $\mathbb{Q}$ the rational numbers, and $\mathbb{R}$ 
+  the real numbers.) For each rule which is not an operation, explain why it is not.
+    \begin{enumerate}
+      \item $a * b = \sqrt{|ab|}$, on the set $\mathbb{Q}$.
+      \item $a * b = a~\text{ln}~b$, on the set $\{x \in \mathbb{R}: x > 0\}$.
+      \item $a * b$ is a root of the equation $x^{2} - a^{2}b^{2} = 0$, on the set $\mathbb{R}$.
+      \item Subtraction, on the set $\mathbb{Z}$.
+      \item Subtraction, on the set $\{ n \in \mathbb{Z}:n \geq 0 \}$.
+      \item $a * b = |a-b|$, on the set $\{ n \in \mathbb{Z}: n \geq 0 \}$.
+        \end{enumerate}
+        \textit{Solution} \\
+        \begin{enumerate}
+          \item This is not an operation on $\mathbb{Q}$ because $a * b$ is not uniquely defined 
+            and $\mathbb{Q}$ is not closed under $*$. If $a$ and $b$ are rational numbers they can 
+            be written as $a = \frac{c}{d}$ and $b = \frac{e}{f}$ where $c, d, e, \text{and} f$ are 
+            integers, $d \neq 0$, and $f \neq 0$. If we let $c = 2$, $d = 1$, $e = 2$, and $f = 1$ then
+            \begin{equation*}
+              \sqrt{ \frac{2}{1} \cdot \frac{2}{1} } = \sqrt{ 2 \cdot 2 } = \sqrt{4}
+            \end{equation*}
+            and since $ \sqrt{4} = \pm 2$ we see that $a * b$ is not uniquely defined. Now let $c = 3$, $d = 1$, 
+            $e = 2$, and $f = 1$ then
+            \begin{equation*}
+              \sqrt{ \frac{3}{1} \cdot \frac{2}{1} } = \sqrt{6}
+            \end{equation*}	
+            and we see that there is no rational number $f$ such that $f \cdot f = 6$, therefore 
+            $\sqrt{6}$ is not a rational number. Thus, $\mathbb{Q}$ is not closed under $*$.
+          \item This is not an operation on the set $\{x \in \mathbb{R}: x > 0\}$ because the set 
+            $\{x \in \mathbb{R}: x > 0\}$ is not closed under $*$. For example, if we let $a = 2$ and $b = 1$ then
+            \begin{equation*}
+              a~\text{ln}~b = 2~\text{ln}~1 = 0
+            \end{equation*}
+            and $ 0 \notin \{x \in \mathbb{R}: x > 0\}$. Therefore the set $\{x \in \mathbb{R}: x > 0\}$ 
+            is not closed under $*$ and $*$ is not an operation on the set $\{x \in \mathbb{R}: x > 0\}$.
+          \item This is not an operation on $\mathbb{R}$ because $a * b$ is not uniquely defined. If we solve for $x$ we see
+            \begin{align*}
+              x^{2} - a^{2}b^{2} &= 0 \\
+              x^{2} &= a^{2}b^{2}
+            \end{align*}
+            since $a^{2}$ and $b^{2}$ will always be positive numbers, then $a^{2}b^{2}$ will be positive as well. 
+            Then solving for $x$ we have
+            \begin{equation*}
+              x = \left( ab, - ab \right)
+            \end{equation*}
+            and we see that $a * b$ is not uniquely defined and therefore $*$ is not an operation on $\mathbb{R}$.
+          \item This is an operation on $\mathbb{Z}$.
+          \item This is not an operation on $\mathbb{Z}$ because the set $\{ n \in \mathbb{Z}:n \geq 0 \}$ is not 
+            closed under $*$. For example, if we let $a = 10$ and $b = 5$ then $5-10=-5$ and 
+            $-5 \notin \{ n \in \mathbb{Z}:n \geq 0 \}$. Therefore the set $\{ n \in \mathbb{Z}:n \geq 0 \}$ is not 
+            closed under $*$.
+          \item This is an operation on the set $\{ n \in \mathbb{Z}: n \geq 0 \}$.
+        \end{enumerate}
+      \section*{B. Properties of Operations}
+        Each of the following is an operation $*$ on $\mathbb{R}$. Indicate whether or not
+        \renewcommand{\theenumi}{(\roman{enumi})}
+        \begin{enumerate}
+          \item it is commutative,
+          \item it is associative,
+          \item $\mathbb{R}$ has and identity element with respect to $*$,
+          \item every $x \in \mathbb{R}$ has an inverse with respect to $*$.
+        \end{enumerate}
+        \textbf{Instructions} For (i), compute $x * y$ and $y * x$, and verify whether or not they are equal. 
+        For (ii), compute $x * (y * z)$ and $(x * y) * z$, and verify whether or not they are equal. For (iii), 
+        first solve the equation $x * e = x$ for $e$; if the equation cannot be solved, there is identity element. 
+        If it \textit{can} be solved, it is still necessary to check that $e * x = x * e = x$ for any $x \in \mathbb{R}$. 
+        If it checks, then $e$ is an identity element. For (iv), first not that it there is no identity element, there 
+        can be no inverses. If there is an identity element $e$, first solve the equation $x * x^{'} = e$ for
+        $x^{'}$; if the equation cannot be solved, $x$ does not have an inverse. If it can be solved, check to 
+        make sure that $x * x^{'} = x^{'} * x = e$. If this checks, $x^{'}$ is the inverse of $x$.
+        \renewcommand{\theenumi}{\arabic{enumi})}
+        \begin{enumerate}
+          \item $x * y = \sqrt{x^2 + y^2}$ \\
+            \medskip
+            \textit{Solution}
+            Although the instructions for this section state that $x * y = \sqrt{x^2 + y^2}$ is an operation
+            on $\mathbb{R}$, I don't think it is an operation on  $\mathbb{R}$ because $\sqrt{x^2 + y^2}$ is 
+            not uniquely defined on $\mathbb{R}$. For example, if we let $x = 1$ and $y = 0$, then 
+            $x * y = \sqrt{1^2 + 0^2} = \sqrt{1} = (-1, 1)$ and we see that $\sqrt{x^2 + y^2}$ is not uniquely 
+            defined on $\mathbb{R}$. Therefore, $x * y = \sqrt{x^2 + y^2}$ is not an operation on $\mathbb{R}$. \\
+          \item $x * y = \abs{ x + y }$ \\
+            \medskip
+            \textit{Solution}
+            \medskip
+              \begin{tabular}{c c c c}
+                \textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+                Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$  \\
+              \end{tabular}
+              \begin{enumerate} 
+                \item $x * y = \abs{x + y}$ \\
+                  $y * x = \abs{y + x} = \abs{x + y}$  because $+$ is a commutative operation on $\mathbb{R}$ \\
+                  Therefore $*$ is commutative on $\mathbb{R}$.
+                \item 
+                  $x * (y * z) = x * \abs{y + z} = \abs{x + \abs{y + z}}$ \\
+                  Let $x = -5$, $ y = 10$, and $z = -20$, then \\
+                  $\abs{-5 + \abs{10-20}} = \abs{-5 + \abs{-10}} = \abs{-5 + 10} = \abs{5} = 5$ \\
+                  $(x * y) * z = \abs{x + y} * z = \abs{\abs{x + y} + z}$ \\
+                  Again, let $x = -5$, $ y = 10$, and $z = -20$, then \\
+                  $\abs{\abs{-5 + 10}-20} = \abs{\abs{5}-20} = \abs{5-20} = \abs{-15} = 15$ \\
+                  Since $5 \neq 15$ then $*$ is not associative on $\mathbb{R}$
+                \item There is no identity element with respect to $*$ on $\mathbb{R}$ because there 
+                  is no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element 
+                  $a$ in $\mathbb{R}$. For example, if $a = -1$ there is no $e \in \mathbb{R}$ such 
+                  that $\abs{e + (-1)} = -1$ because the operation $*$ defined by $x * y = \abs{ x + y }$ 
+                  always returns a positive number.  
+                \item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there 
+                  is no inverse with respect to $*$ on $\mathbb{R}$.
+              \end{enumerate}
+          \item $x * y = \abs{ xy }$ \\
+            \medskip
+            \textit{Solution}
+            \medskip
+            \begin{tabular}{c c c c}
+              \textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+              Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
+            \end{tabular}
+            \begin{enumerate}
+              \item $x * y = \abs{xy}  = \begin{cases} xy &\mbox{if } xy \geq 0 \\ -(xy) &\mbox{if } xy < 0\end{cases} $ \\
+                $y * x = \abs{xy}  = \begin{cases} yx &\mbox{if } yx \geq 0 \\ -(yx) &\mbox{if } yx < 0\end{cases} $ \\
+                Assuming multiplication is commutative on $\mathbb{R}$ (not proven here) then $xy = yx$ and $-(xy) = -(yx)$. 
+                Therefore, $*$ is commutative on $\mathbb{R}$.
+              \item $ x * (y * z) = x * \abs{yz} = \abs{x \abs{yz}} = xyz$ \\
+                $ (x * y) * z = \abs{xy} * z = \abs{\abs{xy}z} = xyz$ \\
+                Therefore $*$ is associative on $\mathbb{R}$.	
+              \item There is no identity element with respect to $*$ on $\mathbb{R}$ because there is 
+                no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ 
+                in $\mathbb{R}$. For example, if $a = -5$ there is no $e \in \mathbb{R}$ such that 
+                $\abs{-5e} = -5$. Therefore there is no identity element with respect to $*$ on $\mathbb{R}$. 
+              \item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
+            \end{enumerate} 
+          \item $x * y = x - y $ \\
+            \medskip
+            \textit{Solution}
+            \medskip
+            \begin{tabular}{c c c c}
+              \textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+                Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ & Yes $\square$  No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
+            \end{tabular}
+            \begin{enumerate}
+              \item The operation $*$ defined by $x * y = x - y$ is not commutative because $x - y \neq y - x$ 
+                for all $x$ and $y$ in $\mathbb{R}$. For example, if $x = 1$ and $y = 2$, then 
+                $x - y = 1 - 2 = -1$ and $y - x = 2 - 1 = 1$. Since $-1 \neq 1$ then the operation 
+                $*$ defined by $x * y = x - y$ is not commutative on $\mathbb{R}$.	
+              \item The operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$ because 
+                $x * (y * z) \neq (x * y) * z$ for all $x$, $y$, and $z$ in $\mathbb{R}$. For example, 
+                if $x = 5$, $y = -1$, and $z = 2$ then $x * (y * z) = 5-(-1-2) = 8$ and $(x * y) * z = (5 - (-1)) -2) = 4$. 
+                Since $8 \neq 4$ then the operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$.
+              \item Solving $x * e = x$ for $e$ we have that $x - e = x \Rightarrow e = 0$. However checking 
+                that $x * e = e * x = x$ we see that $x - 0 = x$ and $0 - x = -x$. Since $x \neq -x$ then 
+                $0$ is not the identity element with respect to the operation $*$ defined by $x * y = x - y$ 
+                on $\mathbb{R}$. Therefore there is no identity element with respect to the operation $*$ 
+                defined by $x * y = x - y$ on $\mathbb{R}$.
+              \item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there 
+                is no inverse with respect to $*$ on $\mathbb{R}$.
+            \end{enumerate}
+					\item $x * y = xy + 1 $ \\
+						\medskip
+						\textit{Solution}
+						\medskip
+						\begin{tabular}{c c c c}
+							\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+							Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
+						\end{tabular}
+						\begin{enumerate}
+							\item $x * y  = xy + 1 $ \\
+								$y * x = yx + 1 = xy + 1$ because $\times$ is commutative on $\mathbb{R}$. \\
+								Therefore, the operation $*$ defined by $xy + 1$ is commutative on $\mathbb{R}$.
+							\item The operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$ because $x * (y * z) \neq (x * y) * z$. \\
+								$x * (y * z) = x * (yz + 1) = x(yz + 1) + 1 = xyz + x + 1$ \\
+								$(x * y) * z = (xy + 1) * z = (xy + 1)z + 1 = xyz + z + 1$ \\
+								Since $xyz + x + 1 \neq xyz + z + 1$ then the operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$.
+							\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
+						\end{enumerate}
+					\item $x * y = \text{max}\{x,y\}$
+						\medskip
+						\textit{Solution}
+						\medskip
+						\begin{tabular}{c c c c}
+							\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+							Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
+						\end{tabular}
+						\begin{enumerate}
+							\item If $x \neq y$ then $x * y = \text{max}(x,y) = \begin{cases} x &\mbox{if } x > y \\ y &\mbox{if } y > x \end{cases}$ \\
+								$y * x = \text{max}(y,x) = \begin{cases} y &\mbox{if } y > x \\ x &\mbox{if } x > y \end{cases}$ \\
+	 							If $x = y$ then $\text{max}(x,y) = z$ where $z = x = y$. \\
+	 							Therefore $x * y = y * x$ and the operation $*$ defined by $\max\{x,y\}$ is commutative on $\mathbb{R}$.
+	 						\item The operation $*$ defined by $\max\{x,y\}$ is associative on $\mathbb{R}$ \\
+	 							$x * (y * z) = x * \text{max}\{y,z\} = \text{max}\{x, \text{max}\{y,z\}\} = \text{max}\{x, y, z\} $ \\
+	 							$(x * y) * z = \text{max}\{x,y\} * z = \text{max}\{\text{max}\{x,y\}, z \} = \text{max}\{x, y, z\}$ \\
+	 							Since $\text{max}\{x, y, z\} = \text{max}\{x, y, z\}$ the operation $*$ defined by $\max\{x,y\}$ is associative on $\mathbb{R}$.
+	 						\item  Solving $x * e = x$ for $e$ we see that $max\{x, e\} = x \Rightarrow e = -\infty$
+	 							However, $-\infty \notin \mathbb{R}$ as is required for an identity element. There is no other 
+	 							$e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. 
+	 							Therefore there is not an identity element with respect to the operation $*$ defined by $\max\{x,y\}$ on $\mathbb{R}$.
+	 						\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
+						\end{enumerate}
+					\item $x * y = \frac{xy}{x + y + 1}$
+						\begin{tabular}{c c c c}
+							\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
+								Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
+						\end{tabular}
+						\begin{enumerate}
+							\item $x * y = \frac{xy}{x+y+1} $;
+								$ y * x = \frac{yx}{y+x+1}$ \\
+								Since $\times$ and $+$ are commutative on $\mathbb{R}$ then $\frac{xy}{x+y+1} = \frac{yx}{y+x+1}$. 
+								Therefore, the operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ is commutative on $\mathbb{R}$.
+							\item The operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ is associative on $\mathbb{R}$. \\
+								$$x * (y *z) = x * \frac{yz}{y + z +1} = \frac{x\left( \frac{yz}{y+z+1} \right)}{x + \frac{yz}{y+z+1} + 1} = \frac{xyz}{1 + x + y + z + xy + xz +yz}$$
+								$$(x * y) * z = \frac{xy}{x + y +1} * z = \frac{z\left( \frac{xy}{x+y+1} \right)}{\frac{xy}{x+y+1} + z + 1} = \frac{xyz}{1 + x + y + z + xy + xz +yz}$$
+								$x * (y * z) = (x * y) * z$ and therefore the operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ is associative on $\mathbb{R}$.
+							\item Solving $x*e = x$ for $e$ we see that $\frac{xe}{x + e +1} = x \Rightarrow x = -1$ and therefore there is 
+								no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. Therefore 
+								there is not an identity element with respect to the operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ on $\mathbb{R}$.
+							\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
+						\end{enumerate}
+					\end{enumerate}
+      \section*{C. Operations on a Two-Element Set}
 
-\section*{A. Examples of Operations}
-
-Which of the following rules are operations on the indicated set? ($\mathbb{Z}$ designates the set of integers, $\mathbb{Q}$ the rational numbers, and $\mathbb{R}$ the real numbers.) For each rule which is not an operation, explain why it is not.
-
-\begin{enumerate}
-
-
-
-\item $a * b = \sqrt{|ab|}$, on the set $\mathbb{Q}$.
-\item $a * b = a~\text{ln}~b$, on the set $\{x \in \mathbb{R}: x > 0\}$.
-\item $a * b$ is a root of the equation $x^{2} - a^{2}b^{2} = 0$, on the set $\mathbb{R}$.
-\item Subtraction, on the set $\mathbb{Z}$.
-\item Subtraction, on the set $\{ n \in \mathbb{Z}:n \geq 0 \}$.
-\item $a * b = |a-b|$, on the set $\{ n \in \mathbb{Z}: n \geq 0 \}$.
-
-\end{enumerate}
-
-\textit{Solution} \\
-\begin{enumerate}
-\item This is not an operation on $\mathbb{Q}$ because $a * b$ is not uniquely defined and $\mathbb{Q}$ is not closed under $*$. If $a$ and $b$ are rational numbers they can be written as $a = \frac{c}{d}$ and $b = \frac{e}{f}$ where $c, d, e, \text{and} f$ are integers, $d \neq 0$, and $f \neq 0$. If we let $c = 2$, $d = 1$, $e = 2$, and $f = 1$ then
-
-$$ \sqrt{ \frac{2}{1} \cdot \frac{2}{1} } = \sqrt{ 2 \cdot 2 } = \sqrt{4}$$  
-
-and since $ \sqrt{4} = \pm 2$ we see that $a * b$ is not uniquely defined. Now let $c = 3$, $d = 1$, $e = 2$, and $f = 1$ then
-
-$$ \sqrt{ \frac{3}{1} \cdot \frac{2}{1} } = \sqrt{6}   $$
-
-and we see that there is no rational number $f$ such that $f \cdot f = 6$, therefore $\sqrt{6}$ is not a rational number. Thus, $\mathbb{Q}$ is not closed under $*$.
-
-\item This is not an operation on the set $\{x \in \mathbb{R}: x > 0\}$ because the set $\{x \in \mathbb{R}: x > 0\}$ is not closed under $*$. For example, if we let $a = 2$ and $b = 1$ then
-
-$$ a~\text{ln}~b = 2~\text{ln}~1 = 0$$
-
-and $ 0 \notin \{x \in \mathbb{R}: x > 0\}$. Therefore the set $\{x \in \mathbb{R}: x > 0\}$ is not closed under $*$ and $*$ is not an operation on the set $\{x \in \mathbb{R}: x > 0\}$.
-
-\item This is not an operation on $\mathbb{R}$ because $a * b$ is not uniquely defined. If we solve for $x$ we see
-
-\begin{align*}
-x^{2} - a^{2}b^{2} &= 0 \\
-x^{2} &= a^{2}b^{2}
-\end{align*}
-
-since $a^{2}$ and $b^{2}$ will always be positive numbers, then $a^{2}b^{2}$ will be positive as well. Then solving for $x$ we have
-
-$$ x = \left( ab, - ab \right) $$
-
-and we see that $a * b$ is not uniquely defined and therefore $*$ is not an operation on $\mathbb{R}$.
-
-\item This is an operation on $\mathbb{Z}$.
-
-\item This is not an operation on $\mathbb{Z}$ because the set $\{ n \in \mathbb{Z}:n \geq 0 \}$ is not closed under $*$. For example, if we let $a = 10$ and $b = 5$ then $5-10=-5$ and $-5 \notin \{ n \in \mathbb{Z}:n \geq 0 \}$. Therefore the set $\{ n \in \mathbb{Z}:n \geq 0 \}$ is not closed under $*$.
-
-\item This is an operation on the set $\{ n \in \mathbb{Z}: n \geq 0 \}$.
-
-\end{enumerate}
-
-
-\section*{B. Properties of Operations}
-
-Each of the following is an operation $*$ on $\mathbb{R}$. Indicate whether or not
-
-\renewcommand{\theenumi}{(\roman{enumi})}
-\begin{enumerate}
-  \item it is commutative,
-  \item it is associative,
-  \item $\mathbb{R}$ has and identity element with respect to $*$,
-  \item every $x \in \mathbb{R}$ has an inverse with respect to $*$.
-\end{enumerate}
-
-\textbf{Instructions} For (i), compute $x * y$ and $y * x$, and verify whether or not they are equal. For (ii), compute $x * (y * z)$ and $(x * y) * z$, and verify whether or not they are equal. For (iii), first solve the equation $x * e = x$ for $e$; if the equation cannot be solved, there is identity element. If it \textit{can} be solved, it is still necessary to check that $e * x = x * e = x$ for any $x \in \mathbb{R}$. If it checks, then $e$ is an identity element. For (iv), first not that it there is no identity element, there can be no inverses. If there is an identity element $e$, first solve the equation $x * x^{'} = e$ for $x^{'}$; if the equation cannot be solved, $x$ does not have an inverse. If it can be solved, check to make sure that $x * x^{'} = x^{'} * x = e$. If this checks, $x^{'}$ is the inverse of $x$.
-
-
-\renewcommand{\theenumi}{\arabic{enumi})}
-\begin{enumerate}
-
-
-
-\item $x * y = \sqrt{x^2 + y^2}$ \\
-	\medskip
-	\textit{Solution}
-
-	Although the instructions for this section state that $x * y = \sqrt{x^2 + y^2}$ is an operation on $\mathbb{R}$, I don't think it is an operation on  $\mathbb{R}$ because $\sqrt{x^2 + y^2}$ is not uniquely defined on $\mathbb{R}$. For example, if we let $x = 1$ and $y = 0$, then $x * y = \sqrt{1^2 + 0^2} = \sqrt{1} = (-1, 1)$ and we see that $\sqrt{x^2 + y^2}$ is not uniquely defined on $\mathbb{R}$. Therefore, $x * y = \sqrt{x^2 + y^2}$ is not an operation on $\mathbb{R}$. \\
-
-\item $x * y = \abs{ x + y }$ \\
-	\medskip
-	\textit{Solution}
-	\medskip
-
-	\begin{tabular}{c c c c}
-	\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-	Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$  \\
-	\end{tabular}
-
-	\begin{enumerate} 
-	\item $x * y = \abs{x + y}$ \\
-	$y * x = \abs{y + x} = \abs{x + y}$  because $+$ is a commutative operation on $\mathbb{R}$ \\
-	Therefore $*$ is commutative on $\mathbb{R}$.
-
-	\item 
-	$x * (y * z) = x * \abs{y + z} = \abs{x + \abs{y + z}}$ \\
-	Let $x = -5$, $ y = 10$, and $z = -20$, then \\
-	$\abs{-5 + \abs{10-20}} = \abs{-5 + \abs{-10}} = \abs{-5 + 10} = \abs{5} = 5$ \\
-	$(x * y) * z = \abs{x + y} * z = \abs{\abs{x + y} + z}$ \\
-	Again, let $x = -5$, $ y = 10$, and $z = -20$, then \\
-	$\abs{\abs{-5 + 10}-20} = \abs{\abs{5}-20} = \abs{5-20} = \abs{-15} = 15$ \\
-	Since $5 \neq 15$ then $*$ is not associative on $\mathbb{R}$
-
-	\item There is no identity element with respect to $*$ on $\mathbb{R}$ because there is no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. For example, if $a = -1$ there is no $e \in \mathbb{R}$ such that $\abs{e + (-1)} = -1$ because the operation $*$ defined by $x * y = \abs{ x + y }$ always returns a positive number.  
-
-
-	\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
-
-	\end{enumerate}
-
-
-\item $x * y = \abs{ xy }$ \\
-	\medskip
-	\textit{Solution}
-	\medskip
-
-	\begin{tabular}{c c c c}
-	\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-	Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
-	\end{tabular}
+Let $A$ bet the two-element set $A = \{a,b\}.$
 
 	\begin{enumerate}
-	\item $x * y = \abs{xy}  = \begin{cases} xy &\mbox{if } xy \geq 0 \\ -(xy) &\mbox{if } xy < 0\end{cases} $ \\
-	$y * x = \abs{xy}  = \begin{cases} yx &\mbox{if } yx \geq 0 \\ -(yx) &\mbox{if } yx < 0\end{cases} $ \\
-	Assuming multiplication is commutative on $\mathbb{R}$ (not proven here) then $xy = yx$ and $-(xy) = -(yx)$. Therefore, $*$ is commutative on $\mathbb{R}$.
-	
-	\item $ x * (y * z) = x * \abs{yz} = \abs{x \abs{yz}} = xyz$ \\
-	$ (x * y) * z = \abs{xy} * z = \abs{\abs{xy}z} = xyz$ \\
-	Therefore $*$ is associative on $\mathbb{R}$.
-	
-	\item There is no identity element with respect to $*$ on $\mathbb{R}$ because there is no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. For example, if $a = -5$ there is no $e \in \mathbb{R}$ such that $\abs{-5e} = -5$. Therefore there is no identity element with respect to $*$ on $\mathbb{R}$. 
-	
-	\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
-	\end{enumerate} 
-
-
-\item $x * y = x - y $ \\
-	\medskip
-	\textit{Solution}
-	\medskip
-	
-	\begin{tabular}{c c c c}
-	\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-	Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ & Yes $\square$  No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
-	\end{tabular}
-	
-	\begin{enumerate}
-	\item The operation $*$ defined by $x * y = x - y$ is not commutative because $x - y \neq y - x$ for all $x$ and $y$ in $\mathbb{R}$. For example, if $x = 1$ and $y = 2$, then $x - y = 1 - 2 = -1$ and $y - x = 2 - 1 = 1$. Since $-1 \neq 1$ then the operation $*$ defined by $x * y = x - y$ is not commutative on $\mathbb{R}$.
-	
-	\item The operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$ because $x * (y * z) \neq (x * y) * z$ for all $x$, $y$, and $z$ in $\mathbb{R}$. For example, if $x = 5$, $y = -1$, and $z = 2$ then $x * (y * z) = 5-(-1-2) = 8$ and $(x * y) * z = (5 - (-1)) -2) = 4$. Since $8 \neq 4$ then the operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$.
-	
-	\item Solving $x * e = x$ for $e$ we have that $x - e = x \Rightarrow e = 0$. However checking that $x * e = e * x = x$ we see that $x - 0 = x$ and $0 - x = -x$. Since $x \neq -x$ then $0$ is not the identity element with respect to the operation $*$ defined by $x * y = x - y$ on $\mathbb{R}$. Therefore there is no identity element with respect to the operation $*$ defined by $x * y = x - y$ on $\mathbb{R}$.
-	
-	\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
-	
-	
-	\end{enumerate}
-	
-\item $x * y = xy + 1 $ \\
-	\medskip
-	\textit{Solution}
-	\medskip
-	
-	\begin{tabular}{c c c c}
-	\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-	Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
-	\end{tabular}
-
-	\begin{enumerate}
-	\item $x * y  = xy + 1 $ \\
-	$y * x = yx + 1 = xy + 1$ because $\times$ is commutative on $\mathbb{R}$. \\
-	Therefore, the operation $*$ defined by $xy + 1$ is commutative on $\mathbb{R}$.
-
-	\item The operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$ because $x * (y * z) \neq (x * y) * z$. \\
-	$x * (y * z) = x * (yz + 1) = x(yz + 1) + 1 = xyz + x + 1$ \\
-	$(x * y) * z = (xy + 1) * z = (xy + 1)z + 1 = xyz + z + 1$ \\
-	Since $xyz + x + 1 \neq xyz + z + 1$ then the operation $*$ defined by $x * y = x - y$ is not associative on $\mathbb{R}$.
-	
-	\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
-
-	\end{enumerate}
-	
-	
-\item $x * y = \text{max}\{x,y\}$
-
-	\medskip
-	\textit{Solution}
-	\medskip
-	
-	\begin{tabular}{c c c c}
-	\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-	Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
-	\end{tabular}
-		
-	\begin{enumerate}
-	\item If $x \neq y$ then $x * y = \text{max}(x,y) = \begin{cases} x &\mbox{if } x > y \\ y &\mbox{if } y > x \end{cases}$ \\
-	 $y * x = \text{max}(y,x) = \begin{cases} y &\mbox{if } y > x \\ x &\mbox{if } x > y \end{cases}$ \\
-	 If $x = y$ then $\text{max}(x,y) = z$ where $z = x = y$. \\
-	 Therefore $x * y = y * x$ and the operation $*$ defined by $\max\{x,y\}$ is commutative on $\mathbb{R}$.
-	 
-	 \item The operation $*$ defined by $\max\{x,y\}$ is associative on $\mathbb{R}$ \\
-	 $x * (y * z) = x * \text{max}\{y,z\} = \text{max}\{x, \text{max}\{y,z\}\} = \text{max}\{x, y, z\} $ \\
-	 $(x * y) * z = \text{max}\{x,y\} * z = \text{max}\{\text{max}\{x,y\}, z \} = \text{max}\{x, y, z\}$ \\
-	 Since $\text{max}\{x, y, z\} = \text{max}\{x, y, z\}$ the operation $*$ defined by $\max\{x,y\}$ is associative on $\mathbb{R}$.
-	 
-	 \item  Solving $x * e = x$ for $e$ we see that $max\{x, e\} = x \Rightarrow e = -\infty$
-	 However, $-\infty \notin \mathbb{R}$ as is required for an identity element. There is no other $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. Therefore there is not an identity element with respect to the operation $*$ defined by $\max\{x,y\}$ on $\mathbb{R}$.
-	 
-	 \item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
-	
-	\end{enumerate}
-	
-\item $x * y = \frac{xy}{x + y + 1}$
-
-	\begin{tabular}{c c c c}
-	\textit{Commutative} & \textit{Associative} & \textit{Identity} & \textit{Inverses} \\
-	Yes $\boxtimes$ No $\square$ & Yes $\boxtimes$ No $\square$ & Yes $\square$ No $\boxtimes$ & Yes $\square$ No $\boxtimes$ \\
-	\end{tabular}
-	
-	\begin{enumerate}
-	\item $x * y = \frac{xy}{x+y+1} $;
-	$ y * x = \frac{yx}{y+x+1}$ \\
-	Since $\times$ and $+$ are commutative on $\mathbb{R}$ then $\frac{xy}{x+y+1} = \frac{yx}{y+x+1}$. Therefore, the operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ is commutative on $\mathbb{R}$.
-	
-	\item The operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ is associative on $\mathbb{R}$. \\
-	$$x * (y *z) = x * \frac{yz}{y + z +1} = \frac{x\left( \frac{yz}{y+z+1} \right)}{x + \frac{yz}{y+z+1} + 1} = \frac{xyz}{1 + x + y + z + xy + xz +yz}$$
-	$$(x * y) * z = \frac{xy}{x + y +1} * z = \frac{z\left( \frac{xy}{x+y+1} \right)}{\frac{xy}{x+y+1} + z + 1} = \frac{xyz}{1 + x + y + z + xy + xz +yz}$$
-	$x * (y * z) = (x * y) * z$ and therefore the operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ is associative on $\mathbb{R}$.
-	
-	\item Solving $x*e = x$ for $e$ we see that $\frac{xe}{x + e +1} = x \Rightarrow x = -1$ and therefore there is no $e \in \mathbb{R}$ such that $e * a = a$ and $a * e = a$ for every element $a$ in $\mathbb{R}$. Therefore there is not an identity element with respect to the operation $*$ defined by $x * y = \frac{xy}{x + y + 1}$ on $\mathbb{R}$.
-	
-	\item Since there is no identity element with respect to $*$ on $\mathbb{R}$ then there is no inverse with respect to $*$ on $\mathbb{R}$.
-	
-	\end{enumerate}
-
+		\item Write the tables of all $16$ operations on $A$
+			\textit{Solution}
+			\begin{minipage}[h]{.25\textwidth}
+				$O_1$
+    		\begin{tabular}{ c | c }
+      		$(x,y)$ & $x*y$ \\
+        	\hline
+        	$(a,a)$ & $a$ \\
+        	$(a,b)$ & $a$ \\
+        	$(b,a)$ & $a$ \\
+        	$(b,b)$ & $a$
+      	\end{tabular}
+    	\end{minipage}
+        
 
 
 \end{enumerate}
 
 
-%\begin{enumerate}\addtocounter{enumi}{2}
 
 
 
