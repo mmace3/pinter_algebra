@@ -1,11 +1,20 @@
 \documentclass[12pt]{article}
 
-\usepackage[left=2cm,right=2cm,top=1.54cm,bottom=2cm]{geometry}
+%\usepackage[left=2cm,right=2cm,top=1.54cm,bottom=2cm]{geometry}
 \usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage{mathtools}
 
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}    % Decrease the side margins
+
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{9in}      % Decrease the top and bottom margins
+
+\newtheorem*{proposition}{Proposition}  % This enables \begin{proposition}
+\newtheorem*{theorem}{Theorem}  % This enables \begin{theorem}
 
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
@@ -16,7 +25,7 @@
 \date{\today}
 \maketitle
 
-\begin{flushleft}
+%\begin{flushleft}
 
 From "Book of Abstract Algebra" by Charles C. Pinter
   
@@ -73,7 +82,8 @@ the real numbers.) For each rule which is not an operation, explain why it is no
             closed under $*$.
           \item This is an operation on the set $\{ n \in \mathbb{Z}: n \geq 0 \}$.
         \end{enumerate}
-      \section*{B. Properties of Operations}
+        
+\section*{B. Properties of Operations}
         Each of the following is an operation $*$ on $\mathbb{R}$. Indicate whether or not
         \renewcommand{\theenumi}{(\roman{enumi})}
         \begin{enumerate}
@@ -238,26 +248,27 @@ the real numbers.) For each rule which is not an operation, explain why it is no
 					\end{enumerate}
 					
 
-\section*{C. Operations on a Two-Element Set}
-Let $A$ bet the two-element set $A = \{a,b\}.$
+\noindent\textbf{C. Operations on a Two-Element Set} \smallskip
+
+\noindent Let $A$ be the two-element set $A = \{a,b\}.$
 	\begin{enumerate}
-		\item Write the tables of all $16$ operations on $A$ \\
-		\medskip
-			\textit{Solution} \\
-			\medskip
-			\begin{minipage}[h]{.2\textwidth}
-				$O_1$
-    		\begin{tabular}{ c | c }
-      		$(x,y)$ & $x*y$ \\
-        	\hline
-        	$(a,a)$ & $a$ \\
-        	$(a,b)$ & $a$ \\
-        	$(b,a)$ & $a$ \\
-        	$(b,b)$ & $a$
+	  \item Write the tables of all $16$ operations on $A$ \\
+	  \medskip
+	  \textit{Solution} \\
+	  \medskip
+		\begin{minipage}[h]{.25\textwidth}
+		$O_1$
+      \begin{tabular}{ c | c }
+        $(x,y)$ & $x*y$ \\
+        \hline
+        $(a,a)$ & $a$ \\
+        $(a,b)$ & $a$ \\
+        $(b,a)$ & $a$ \\
+        $(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}
     	\bigskip
-      \begin{minipage}[h]{.2\textwidth}
+      \begin{minipage}[h]{.25\textwidth}
 				$O_2$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -268,7 +279,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $b$
       	\end{tabular}
     	\end{minipage}
-      \begin{minipage}[h]{.2\textwidth}
+      \begin{minipage}[h]{.25\textwidth}
 				$O_3$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -279,7 +290,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $b$
       	\end{tabular}
     	\end{minipage}        
-      \begin{minipage}[h]{.2\textwidth}
+      \begin{minipage}[h]{.25\textwidth}
 				$O_4$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -290,7 +301,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $b$
       	\end{tabular}
     	\end{minipage} 
-      \begin{minipage}[h]{.2\textwidth}
+      \begin{minipage}[h]{.25\textwidth}
 				$O_5$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -302,7 +313,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
       	\end{tabular}
     	\end{minipage}
     	\bigskip
-      \begin{minipage}[h]{.2\textwidth}
+      \begin{minipage}[h]{.25\textwidth}
 				$O_6$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -313,7 +324,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage} 	
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_7$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -324,7 +335,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_8$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -335,7 +346,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_9$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -347,7 +358,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
       	\end{tabular}
     	\end{minipage}
     	\bigskip  	
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{10}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -358,7 +369,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}   
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{11}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -369,7 +380,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}   
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{12}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -380,7 +391,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $b$
       	\end{tabular}
     	\end{minipage}
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{13}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -391,7 +402,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{14}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -402,7 +413,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $a$
       	\end{tabular}
     	\end{minipage}
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{15}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -413,7 +424,7 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,b)$ & $b$
       	\end{tabular}
     	\end{minipage}
-    	\begin{minipage}[h]{.2\textwidth}
+    	\begin{minipage}[h]{.25\textwidth}
 				$O_{16}$
     		\begin{tabular}{ c | c }
       		$(x,y)$ & $x*y$ \\
@@ -423,23 +434,74 @@ Let $A$ bet the two-element set $A = \{a,b\}.$
         	$(b,a)$ & $b$ \\
         	$(b,b)$ & $b$
       	\end{tabular}
-    	\end{minipage}          	 	 	
+    	\end{minipage}
+    \item Identify which of the operations $O_1$ to $O_{16}$ are commutative. \\
+    \smallskip
+      The operations $O_1$, $O_2$, $O_3$, $O_5$, $O_6$, $O_8$, $O_{11}$, and $O_{12}$ are commutative.
+    
+    \item Identify which operations, among $O_1$ to $O_{16}$, are associative. \\
+    \smallskip
+      The operations $O_1$, $O_2$, $O_3$, $O_4$, $O_5$, $O_9$, $O_{11}$, and $O_{12}$ are associative
+    \item For which of the operations $O_1$ to $O_{16}$ is there an identity element? \\
+    \smallskip
+      There is and identity element for $O_3$, $O_5$, $O_{11}$, and $O_{12}$ with respect to the operation $*$ on $A$
+    \item For which of the operations $O_1$ to $O_{16}$ does every element have and inverse? \\
+    \smallskip
+      We only need to consider the operations that have an identity element. For the operations $O_{11}$ and $O_{12}$ every element has an inverse. For operation $O_3$, there is no inverse for $b$ and for operation $O_5$ there is no inverse for $a$.
   \end{enumerate}
 
 
+\noindent\textbf{D. Automata: The Algebra of Input/Output Sequences ($2^{nd}$ edition)} \smallskip
 
+\noindent The set of all sequences of symbols in the alphabet $A$ is denoted by $A^*$.
 
+There is an operation on $A^*$ called \textit{concatenation}: if \textbf{a} and \textbf{b} are in $A^*$, say $\textbf{a} = a_1a_2...a_n$ and $\textbf{b} = b_1b_2...b_m$, then
+  \begin{equation*}
+    \textbf{a}*\textbf{b} = a_1a_2...a_nb_1b_2...b_m.
+  \end{equation*}
+The symbol $\lambda$ denotes the empty sequence.
 
+\bigskip
 
+\noindent\textbf{(a)}
+\begin{proposition}
+  The operation $*$ defined by $\textbf{ab} = a_1a_2...a_nb_1b_2...b_m$ is associative.
+\end{proposition}
+\begin{proof}
+To prove that $*$ is associative, let $\textbf{x}$, $\textbf{y}$, $\textbf{z} \in A$. Then
+\begin{equation*}
+  \textbf{x} * (\textbf{y} * \textbf{z}) = \textbf{x} * y_1y_2...y_n z_1z_2...z_m = x_1x_2...x_k y_1y_2...y_n z_1z_2...z_m 
+\end{equation*}
+and
+\begin{equation*}
+  (\textbf{x} * \textbf{y}) * \textbf{z} = x_1x_2...x_k y_1y_2...y_n * \textbf{z} = x_1x_2...x_k y_1y_2...y_n z_1z_2...z_m.
+\end{equation*}
+Since the two results are the same, the operation $*$ is associative.
+\end{proof}
 
+\bigskip
 
+\noindent\textbf{(b)} \quad The operation $*$ defined by $\textbf{a} * \textbf{b} = a_1a_2...a_nb_1b_2...b_m$ is not commutative because switching the order of $\textbf{a}$ and $\textbf{b}$ in the operation will lead to different results.
 
+\bigskip
 
+\noindent\textbf{(c)}
+\begin{proposition}
+  There is an identity element with respect to the operation $*$ defined by $\textbf{ab} = a_1a_2...a_nb_1b_2...b_m$ on $A^*$.
+\end{proposition}
+\begin{proof}
+We must show that there is an element $ e \in A^*$ such that $e * a = a$ and $a * e = a$ for every $a \in A^*$. Let $\textbf{a}$ be an arbitrary element of $A^*$, $e = \lambda$, and $e \in A^*$. Since $\lambda$ is the empty sequence, then
 
+\begin{equation*}
+  \textbf{a} * e = \textbf{a}*\lambda = a_1a_2...a_m\lambda = a_1a_2...a_m = \textbf{a}
+\end{equation*}
+and
+\begin{equation*}
+  e * \textbf{a} = \lambda*\textbf{a} = \lambda a_1a_2...a_m = a_1a_2...a_m = \textbf{a}.
+\end{equation*}
+Therefore we conclude that $\lambda$ is the identity element with respect to the operation $*$ defined by $\textbf{ab} = a_1a_2...a_nb_1b_2...b_m$ on $A^*$.
 
-
-
-\end{flushleft}
+\end{proof}
 
 \end{document}
  
