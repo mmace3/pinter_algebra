@@ -19,7 +19,7 @@
 
 \begin{center}
 Chapter 3 Solutions \\
-From "Book of Abstract Algebra" by Charles C. Pinter \\
+From ``Book of Abstract Algebra'' by Charles C. Pinter \\
 \today
 \end{center}
 
@@ -90,7 +90,58 @@ x^{-1} * x = (-x - 2k) + x + k = -x - 2k + x + k = -k
 Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
 \end{proof}
 
-\noindent\textbf{2.} \quad Let $G = \mathbb{R}$, and let $\ast$ be the binary operation on $G$ defined by
+\noindent\textbf{2.} \quad Let $G = \{x \in \mathbb{R}: x \neq 0\}$, and let $\ast$ be the binary operation on $G$ defined by
+\begin{equation}
+x * y = \frac{xy}{2}
+\end{equation}
+for all $x, y \in G$.
+
+\begin{proposition}
+The set $G$, with the operation $\ast$, is an abelian group.
+\end{proposition}
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is an abelian group we must show that $\ast$ is commutative, associative and that $G$ has an identity element and inverses.
+
+To prove that $*$ is associative let $x$ and $y$ be arbitrary elements of $G$. Then
+\begin{equation*}
+x * y = \frac{xy}{2}
+\end{equation*}
+and
+\begin{equation*}
+y * x = \frac{xy}{2} = \frac{yx}{2}.
+\end{equation*}
+Since the two results are the same, the operation $\ast$ is commutative.
+
+Now let $x$, $y$, and $z$ be arbitrary elements of $G$. Then
+
+\begin{equation*}
+x * (y * z) = x * \frac{yz}{2} = \frac{\frac{xyz}{2}}{2} = \frac{xyz}{4}
+\end{equation*}
+and
+\begin{equation*}
+(x * y) * z = \frac{xy}{2} * z = \frac{\frac{xyz}{2}}{2} = \frac{xyz}{4}
+\end{equation*}
+Since the two results are the same, the operation $*$ is associative.
+
+The identity element for $G$ is $2$ because
+\[
+x * 2 =\frac{x2}{2} = x
+\]
+and
+\[
+2 * x = \frac{2x}{2} = x.
+\]
+
+Finally we see that $\frac{4}{x}$ is the inverse of the operation $\ast$ because
+\[
+x * \frac{4}{x} = \frac{\frac{4x}{x}}{2} = \frac{4}{2} = 2
+\]
+and
+\[
+\frac{4}{x} * x = \frac{\frac{4x}{x}}{2} = \frac{4}{2}.
+\]
+Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
+\end{proof}
 
 
 \end{document}
