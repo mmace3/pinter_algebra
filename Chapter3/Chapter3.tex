@@ -191,16 +191,75 @@ and
 
 Finally we see that $-\frac{x}{1+x}$ is the inverse of the operation $\ast$ because
 \begin{align*}
-x + \left( -\frac{x}{1+x} \right) &= x + \left( - \frac{x}{1+x} \right) + x \cdot  \left( - \frac{x}{1+x} \right) \\
+x * \left( -\frac{x}{1+x} \right) &= x + \left( - \frac{x}{1+x} \right) + x \cdot  \left( - \frac{x}{1+x} \right) \\
 &= \frac{x + x^2 - x + x^2}{1 + x} = 0
 \end{align*}
 and
 \begin{align*}
-\left( -\frac{x}{1+x} \right) + x &= \left( -\frac{x}{1+x} \right) + x + \left( -\frac{x^2}{1+x} \right) \\
+\left( -\frac{x}{1+x} \right) * x &= \left( -\frac{x}{1+x} \right) + x + \left( -\frac{x^2}{1+x} \right) \\
 &= \frac{x + x^2 - x - x^2}{1 + x} = 0
 \end{align*}
 Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
 
 \end{proof}
+
+\noindent\textbf{4.} \quad Let $G = \{x \in \mathbb{R}: -1 < x < 1\}$, and let $\ast$ be the binary operation on $G$ defined by
+\begin{equation}
+x * y = \frac{x + y}{xy + 1}
+\end{equation}
+for all $x, y \in G$.
+
+\begin{proposition}
+The set $G$, with the operation $\ast$, is an abelian group.
+\end{proposition}
+
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is an abelian group we must show that $\ast$ is commutative, associative and that $G$ has an identity element and inverses.
+
+To prove that $*$ is associative let $x$ and $y$ be arbitrary elements of $G$. Then
+\begin{equation*}
+x * y = \frac{x + y}{xy + 1}
+\end{equation*}
+and
+\begin{equation*}
+y * x = \frac{y + x}{yx + 1} = \frac{x + y}{xy + 1}
+\end{equation*}
+Since the two results are the same, the operation $\ast$ is commutative.
+
+Now let $x$, $y$, and $z$ be arbitrary elements of $G$. Then
+\begin{align*}
+x * (y * z) &= x * \frac{y + z}{yz + 1} \\
+&= \frac{x + \frac{y + z}{yz + 1}}{\frac{y + z}{yz + 1} + 1} \\
+&= x + y + z + xy + xz + yz + xyz + 1
+\end{align*}
+and
+\begin{align*}
+(x * y) * z &= \frac{x + y}{xy + 1} *z \\
+&= \frac{\frac{x + y }{xy + 1} + z}{\frac{x + y}{xy + 1}z + 1} \\
+&= x + y + z + xy + xz + yz + xyz + 1
+\end{align*}
+Since the two results are the same, the operation $*$ is associative.
+
+The identity element for $G$ is $0$ because
+\begin{equation*}
+x * 0 = \frac{x + 0}{x \cdot 0 + 1} = \frac{x}{1} = x
+\end{equation*}
+and
+\begin{equation*}
+0 * x = \frac{0 + x}{0 \cdot x + 1} = \frac{x}{1} = x
+\end{equation*}
+
+Finally we see that $-x$ is the inverse of the operation $\ast$ because
+\begin{equation*}
+x * -x = \frac{x - x}{x \cdot -x + 1} = \frac{0}{-x^2 + 1} = 0
+\end{equation*}
+and
+\begin{equation*}
+-x * x = \frac{-x + x}{-x \cdot x + 1} = \frac{0}{-x^2 + 1} = 0
+\end{equation*}
+
+\end{proof}
+Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
+
 
 \end{document}
