@@ -260,6 +260,151 @@ and
 
 \end{proof}
 Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
+\bigskip
 
+\noindent\textbf{B. Groups on the Set} $\mathbb{R} \times \mathbb{R}$ \smallskip
+
+\noindent\textbf{1.} \quad Let $(a,b)*(c,d) = (ad+bc,bd)$ be a binary operation $*$ on the set $G = \{(x,y) \in \mathbb{R} \times \mathbb{R}: y \neq 0\}$ \\
+
+\noindent\textbf{(a)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is a group.
+\end{proposition}
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is a group we must show that $\ast$ is associative and that $G$ has an identity element and inverses.
+
+To prove that $*$ is associative let $a$, $b$, $c$ and $d$ be arbitrary elements of $G$. Then
+\begin{align*}
+(a,b)*((c,d)*(e,f)) &= (a,b)*(cf + de, df) = (a \cdot df + b \cdot (cf + de), b \cdot df) \\
+&= (adf + bcf + bde, bdf)
+\end{align*}
+and
+\begin{align*}
+((a,b)*(c,d))*(e,f) &= (ad + bc, bd) * (e,f) = ((ad + bc) \cdot f + bd \cdot e, bd \cdot f) \\
+&= (adf + bcf + bde, bdf)
+\end{align*}
+Since the two results are the same, the operation $*$ is associative.
+
+The identity element for $G$ is $(0,1)$ because
+\begin{equation*}
+(a,b) * (0,1) = (a + 0, b) = (a,b)
+\end{equation*}
+and
+\begin{equation*}
+(0,1) * (a,b) = (0 + a, b) = (a,b)
+\end{equation*}
+
+Finally we see that $(\tfrac{-a}{b^2}, \tfrac{1}{b})$ is the inverse of the operation $\ast$ because
+\begin{equation*}
+(a,b) * \left(-\frac{a}{b^2}, \frac{1}{b} \right) = \left(a \cdot \frac{1}{b} + b \cdot -\frac{a}{b^2}, b \cdot \frac{1}{b} \right) = \left( \frac{ab}{b^2} - \frac{ab}{b^2}, 1 \right) = (0,1)
+\end{equation*}
+and
+\begin{equation*}
+\left( -\frac{a}{b^2}, \frac{1}{b} \right) * (a,b) = \left( -\frac{a}{b^2} \cdot b + \frac{a}{b}, \frac{1}{b} \cdot b \right) = \left( -\frac{ab}{b^2} + \frac{ab}{b^2}, 1 \right) = (0,1)
+\end{equation*}
+Therefore, we conclude that the set $G$, with the operation $\ast$, is a group.
+\end{proof}
+
+\bigskip
+\noindent\textbf{(b)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is an abelian group.
+\end{proposition}
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is an abelian group we must show that $\ast$ is commutative, associative and that $G$ has an identity element and inverses. In part (a), we have already shown that the operation $*$ is associative and that $G$ has an identity element and inverses. Therefore we must show that the operation $*$ is commutative.
+
+To prove that $*$ is commutative let $a$ and $b$ be arbitrary elements of $G$. Then
+\begin{equation*}
+(a,b)*(c,d) = (ad + bc, bd)
+\end{equation*}
+and
+\begin{equation*}
+(c,d)*(a,b) = (cb +da,db) = (ad + bc, bd)
+\end{equation*}
+Since the two results are the same, the operation $\ast$ is commutative.
+
+Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
+\end{proof}
+
+\noindent\textbf{2.} \quad Let $(a,b)*(c,d) = (ac, bc + d)$ be a binary operation $*$ on the set $G = \{(x,y) \in \mathbb{R} \times \mathbb{R}: x \neq 0\}$ \\
+
+\noindent\textbf{(a)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is a group.
+\end{proposition}
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is a group we must show that $\ast$ is associative and that $G$ has an identity element and inverses.
+
+To prove that $*$ is associative let $a$, $b$, $c$ and $d$ be arbitrary elements of $G$. Then
+\begin{align*}
+(a,b) * ((c,d) * (e,f)) &= (a,b) * (ce, de + f) = (a \cdot ce, b \cdot ce + de + f) \\
+&= (ace, bce + de + f)
+\end{align*}
+and
+\begin{align*}
+((a,b)*(c,d)) * (e,f) &= (ac, bc + d) * (e,f) = (ac \cdot e, (bc + d) \cdot e + f) \\
+&= (ace, bce + de + f)
+\end{align*}
+Since the two results are the same, the operation $*$ is associative.
+
+The identity element for $G$ is $(1,0)$ because
+\begin{equation*}
+(a,b) * (1,0) = (a \cdot 1, b \cdot 1 + 0) = (a,b)
+\end{equation*}
+and
+\begin{equation*}
+(1,0) * (a,b) = (1 \cdot a, 0 \cdot a + b) = (a,b)
+\end{equation*}
+
+Finally we see that $(\tfrac{1}{a}, \tfrac{-b}{a})$ is the inverse of the operation $\ast$ because
+\begin{equation*}
+(a,b) * \left( \frac{1}{a}, -\frac{b}{a} \right) = \left( a \cdot \frac{1}{a}, \frac{b}{a} + \left( -\frac{b}{a} \right) \right) = (1,0)
+\end{equation*}
+and
+\begin{equation*}
+\left( \frac{1}{a}, -\frac{b}{a} \right) * (a,b) = \left(\frac{1}{a} \cdot a, -\frac{b}{a} \cdot a + b \right) = (1, -b + b) = (1,0)
+\end{equation*}
+Therefore, we conclude that the set $G$, with the operation $\ast$, is a group.
+\end{proof}
+
+\bigskip
+\noindent\textbf{(b)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is not an abelian group.
+\end{proposition}
+\begin{proof}
+To prove that the set $G$, with the operation $\ast$, is not an abelian group we must show that the operation $*$ is not commutative.
+
+Let $a$, $b$, $c$ and $d$ be arbitrary elements of $G$. Then
+\begin{equation}
+(a,b) * (c,d) = (ac,bc+d)
+\end{equation}
+and
+\begin{equation}
+(c,d) * (a,b) = (ca, da+b)
+\end{equation}
+Since the two results are not the same, the operation $\ast$ is not commutative.
+
+Therefore, we conclude that the set $G$, with the operation $\ast$, is not an abelian group.
+\end{proof}
+
+\noindent\textbf{3.} \quad Let $(a,b)*(c,d) = (ac, bc + d)$ be a binary operation $*$ on the set $G = \{(x,y) \in \mathbb{R} \times \mathbb{R}\}$ \\
+
+\noindent\textbf{(a)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is not a group.
+\end{proposition}
+\begin{proof}
+For the set $G$ with the operation $*$ to be a group, all elements in $G$ must have an inverse with respect to the operation $*$. We have shown in problem 2 that the inverse of the operation $*$ defined by $(a,b)*(c,d) = (ac, bc + d)$ is $(\tfrac{1}{a}, \tfrac{-b}{a})$. If we let $(x,y) = (0,y)$ then we see that the inverse is not defined and it follows that not every element in $G$ has an inverse with respect to the operation $*$. Therefore, the set $G$, with the operation $\ast$, is not a group.
+\end{proof}
+
+\bigskip
+\noindent\textbf{(b)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is not an abelian group.
+\end{proposition}
+\begin{proof}
+To be an abelian group, the set $G$ with the operation $*$ must be a group and the operation $*$ must be commutative. We have shown in part (a) that the set $G$ with the operation $*$ is not a group. Therefore, the set $G$ with the operation $*$ is also not an abelian group. 
+\end{proof}
 
 \end{document}
