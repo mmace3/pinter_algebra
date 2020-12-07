@@ -406,5 +406,49 @@ The set $G$, with the operation $\ast$, is not an abelian group.
 \begin{proof}
 To be an abelian group, the set $G$ with the operation $*$ must be a group and the operation $*$ must be commutative. We have shown in part (a) that the set $G$ with the operation $*$ is not a group. Therefore, the set $G$ with the operation $*$ is also not an abelian group. 
 \end{proof}
+\bigskip
+
+\noindent\textbf{2.} \quad Let $(a,b)*(c,d) = (ac - bd, ad + bc)$ be a binary operation $*$ on the set $G = \{(x,y) \in \mathbb{R} \times \mathbb{R}\}$ with the origin deleted. \\
+
+\noindent\textbf{(a)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is a group.
+\end{proposition}
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is a group we must show that $\ast$ is associative and that $G$ has an identity element and inverses.
+
+To prove that $*$ is associative let $a$, $b$, $c$ and $d$ be arbitrary elements of $G$. Then
+\begin{align*}
+(a,b) * ((c,d) * (e,f)) &= (a,b) * (ce - df, cf + de) \\
+&= (a \cdot (ce - df) - b \cdot (cf + de), a \cdot (cf + de) + (ce - df) \cdot b) \\
+&= (ace - adf - bcf - bde, acf + ade + bce - bdf)
+\end{align*}
+and
+\begin{align*}
+((a,b) * (c,d)) * (e,f) &= (ac - bd, ad + bc) * (e,f) \\
+&= ((ac - bd) \cdot e - (ad + bc) \cdot f, (ac - bd) \cdot f + (ad + bc) \cdot e) \\
+&= (ace - adf - bcf - bde, acf + ade + bce - bdf)
+\end{align*}
+
+The identity element for $G$ is $(1,0)$ because
+\begin{equation*}
+(a,b) * (1,0) = (a - 0, 0 + b) = (a,b)
+\end{equation*}
+and
+\begin{equation*}
+(1,0) * (a,b) = (a - 0, b + 0) = (a,b)
+\end{equation*}
+
+Finally we see that $(\tfrac{a}{a^2 + b^2}, \tfrac{-b}{a^2 + b^2})$ is the inverse of the operation $\ast$ because
+\begin{align*}
+(a,b) * \left( \frac{a}{a^2 + b^2}, -\frac{b}{a^2 + b^2} \right) &= \left( a \cdot \frac{a}{a^2 + b^2} - b \cdot \frac{-b}{a^2 + b^2}, a \cdot \frac{-b}{a^2 + b^2} + b \cdot \frac{a}{a^2 + b^2} \right) \\
+&= (1,0)
+\end{align*}
+and
+\begin{align*}
+ \left( \frac{a}{a^2 + b^2}, -\frac{b}{a^2 + b^2} \right) * (a,b) &= \left(\frac{a}{a^2 + b^2} \cdot a - \left(-\frac{b}{a^2 + b^2} \cdot b \right), \frac{a}{a^2 + b^2} \cdot b + \left( -\frac{b}{a^2 + b^2} \cdot a \right) \right) \\
+&= (1,0)
+\end{align*}
+\end{proof}
 
 \end{document}
