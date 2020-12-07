@@ -15,6 +15,9 @@
 
 \pagestyle{empty}                 % Turn off page numbering
 
+
+\let\emptyset\varnothing
+
 \begin{document}
 
 \begin{center}
@@ -475,5 +478,73 @@ Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelia
 
 \noindent\textbf{5.} \quad No, the operation $*$ in exercise 4, defined as $(a,b)*(c,d) = (ac - bd, ad + bc)$, on the set $\mathbb{R} \times \mathbb{R}$ is not a group because not every element in $\mathbb{R} \times \mathbb{R}$ has an inverse with respect to the operation $*$. From the solution to exercise 4 we know that the inverse with respect to $*$ is $(\tfrac{a}{a^2 + b^2}, \tfrac{-b}{a^2 + b^2})$ and we see that the inverse for $(0,0)$ is not defined. Therefore, the operation $*$ on the set $\mathbb{R} \times \mathbb{R}$ is not a group.
 
+\bigskip
+
+\noindent\textbf{C. Groups of Subsets of a Set} \smallskip
+
+The symmetric difference of any two sets $A$ and $B$ is defined as
+\begin{equation*}
+A + B = (A - B) \cup (B - A)
+\end{equation*}
+The operation $+$ defined as above is commutative because $A + B = B + A$. This operation is also associative so that $A + (B + C) = (A + B) + C$.
+
+If $D$ is a set, then the \textit{power set} of $D$ is the set $P_D$ of all the subsets of $D$. That is,
+\begin{equation*}
+P_D = \{A: A \subseteq D\}
+\end{equation*}
+The operation $+$ is to be regarded as an operation on $P_D$.
+
+\bigskip
+
+\noindent\textbf{1.} 
+\begin{proposition}
+The identity element with respect to the operation $+$ on the set $P_D$ is $\emptyset$.
+\end{proposition}
+\begin{proof}
+To prove that $\emptyset$ is the identity element with respect to the operation $+$, let $A$ be an arbitrary element of $P_D$. Then
+\begin{equation*}
+A + \emptyset = (A - \emptyset) \cup (\emptyset - A) = A \cup A = A
+\end{equation*}
+and
+\begin{equation*}
+\emptyset + A = (\emptyset - A) \cup (A - \emptyset) = A \cup A = A
+\end{equation*}
+Therefore, we conclude that $\emptyset$ is the identity element with respect to the operation $+$.
+\end{proof}
+
+
+\bigskip
+\noindent\textbf{2.}
+\begin{proposition}
+Every subset $A$ of $D$ has an inverse with respect to $+$, which is $A$.
+\end{proposition}
+\begin{proof}
+Let $A$ be an arbitrary element of $D$. Then we see that $A$ is the inverse of $A$ with respect to $+$ because
+\begin{equation*}
+A + A = (A - A) \cup (A - A) = \emptyset \cup \emptyset = \emptyset
+\end{equation*}
+and
+\begin{equation*}
+A + A = (A - A) \cup (A - A) = \emptyset \cup \emptyset = \emptyset
+\end{equation*}
+Therefore, $\emptyset$ is the inverse of $A$ with respect to $+$ on $D$.
+\end{proof}
+
+\bigskip
+\noindent\textbf{3.} 
+
+\smallskip
+\noindent\textbf{(a)} If $D$ is the three element set $\{a,b,c\}$ then $P_D = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\} \}$.
+
+\bigskip
+\noindent\textbf{(b)}
+The operation table for $\langle P_D, + \rangle$ is \\
+
+\begin{tabular}{c | c c c c c c c c}
+$+$ & $\emptyset$ & $\{a\}$ & $\{b\}$ & $\{c\}$ & $\{a,b\}$ & $\{a,c\}$ & $\{b,c\}$ & $\{a,b,c\}$ \\
+\hline
+$\emptyset$ & $\emptyset$ & $\{a\}$ & $\{b\}$ & $\{c\}$ & $\{a,b\}$ & $\{a,c\}$ & $\{b,c\}$ & $\{a,b,c\}$ \\
+$\{a\}$ & $\{a\}$ & $\emptyset$ & $\{a,b\}$ & $\{a,c\}$ & $\{b\}$ & $\{c\}$ & $\{a,b,c\}$ & $\{b,c\}$ \\
+\end{tabular}
 
 \end{document}
