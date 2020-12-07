@@ -408,7 +408,7 @@ To be an abelian group, the set $G$ with the operation $*$ must be a group and t
 \end{proof}
 \bigskip
 
-\noindent\textbf{2.} \quad Let $(a,b)*(c,d) = (ac - bd, ad + bc)$ be a binary operation $*$ on the set $G = \{(x,y) \in \mathbb{R} \times \mathbb{R}\}$ with the origin deleted. \\
+\noindent\textbf{4.} \quad Let $(a,b)*(c,d) = (ac - bd, ad + bc)$ be a binary operation $*$ on the set $G = \{(x,y) \in \mathbb{R} \times \mathbb{R}\}$ with the origin deleted. \\
 
 \noindent\textbf{(a)}
 \begin{proposition}
@@ -449,6 +449,31 @@ and
  \left( \frac{a}{a^2 + b^2}, -\frac{b}{a^2 + b^2} \right) * (a,b) &= \left(\frac{a}{a^2 + b^2} \cdot a - \left(-\frac{b}{a^2 + b^2} \cdot b \right), \frac{a}{a^2 + b^2} \cdot b + \left( -\frac{b}{a^2 + b^2} \cdot a \right) \right) \\
 &= (1,0)
 \end{align*}
+Therefore, we conclude that the set $G$, with the operation $\ast$, is a group.
 \end{proof}
+
+\bigskip
+\noindent\textbf{(b)}
+\begin{proposition}
+The set $G$, with the operation $\ast$, is an abelian group.
+\end{proposition}
+\begin{proof}
+To prove the set $G$, with the operation $\ast$, is an abelian group we must show that $\ast$ is commutative, associative and that $G$ has an identity element and inverses. In part (a), we have already shown that the operation $*$ is associative and that $G$ has an identity element and inverses. Therefore we must show that the operation $*$ is commutative.
+
+To prove that $*$ is commutative let $a$, $b$, $c$, and $d$ be arbitrary elements of $G$. Then
+\begin{equation*}
+(a,b)*(c,d) = (ac - bd, ad + bc)
+\end{equation*}
+and
+\begin{equation*}
+(c,d)*(a,b) = (ca - db, cb + da) = (ac - bd, ad + bc)
+\end{equation*}
+Since the two results are the same, the operation $\ast$ is commutative.
+
+Therefore, we conclude that the set $G$, with the operation $\ast$, is an abelian group.
+\end{proof}
+
+\noindent\textbf{5.} \quad No, the operation $*$ in exercise 4, defined as $(a,b)*(c,d) = (ac - bd, ad + bc)$, on the set $\mathbb{R} \times \mathbb{R}$ is not a group because not every element in $\mathbb{R} \times \mathbb{R}$ has an inverse with respect to the operation $*$. From the solution to exercise 4 we know that the inverse with respect to $*$ is $(\tfrac{a}{a^2 + b^2}, \tfrac{-b}{a^2 + b^2})$ and we see that the inverse for $(0,0)$ is not defined. Therefore, the operation $*$ on the set $\mathbb{R} \times \mathbb{R}$ is not a group.
+
 
 \end{document}
