@@ -545,6 +545,61 @@ $+$ & $\emptyset$ & $\{a\}$ & $\{b\}$ & $\{c\}$ & $\{a,b\}$ & $\{a,c\}$ & $\{b,c
 \hline
 $\emptyset$ & $\emptyset$ & $\{a\}$ & $\{b\}$ & $\{c\}$ & $\{a,b\}$ & $\{a,c\}$ & $\{b,c\}$ & $\{a,b,c\}$ \\
 $\{a\}$ & $\{a\}$ & $\emptyset$ & $\{a,b\}$ & $\{a,c\}$ & $\{b\}$ & $\{c\}$ & $\{a,b,c\}$ & $\{b,c\}$ \\
+$\{b\}$ & $\{b\}$ & $\{ab\}$ & $\emptyset$ & $\{bc\}$ & $\{a\}$ & $\{abc\}$ & $\{c\}$ & $\{ac\}$ \\
+$\{c\}$ & $\{c\}$ & $\{ac\}$ & $\{bc\}$ & $\emptyset$ & $\{abc\}$ & $\{a\}$ & $\{b\}$ & $\{ab\}$ \\
+$\{ab\}$ & $\{ab\}$ & $\{b\}$ & $\{a\}$ & $\{abc\}$ & $\emptyset$ & $\{bc\}$ & $\{ac\}$ & $\{c\}$ \\
+$\{ac\}$ & $\{ac\}$ & $\{c\}$ & $\{abc\}$ & $\{a\}$ & $\{bc\}$ & $\emptyset$ & $\{ab\}$ & $\{b\}$ \\
+$\{bc\}$ & $\{bc\}$ & $\{abc\}$ & $\{c\}$ & $\{b\}$ & $\{ac\}$ & $\{ab\}$ & $\emptyset$ & $\{a\}$ \\
+$\{abc\}$ & $\{abc\}$ & $\{bc\}$ & $\{ac\}$ & $\{ab\}$ & $\{c\}$ & $\{b\}$ & $\{a\}$ & $\emptyset$
 \end{tabular}
+
+
+\bigskip
+
+\noindent\textbf{D. A Checkerboard Game} \smallskip
+
+Consider the set $G = \{V, H, D, I\}$ where each element is defined as a move on a checkerboard that has only 4 squares. Each move is defined as as follows:
+\smallskip
+
+V: Move vertically; that is move from 1 to 3, or from 3 to 1, or from 2 to 4 or 4 to 2.
+\smallskip
+
+H: Move horizontally, that is move from 1 to 2 or vice versa, or from 3 to 4 or vice versa.
+\smallskip
+
+D: Move diagonally, that is, move from 2 to 3 or vice versa, or move from 1 to 4 or vice versa.
+\smallskip
+
+I: Stay put.
+
+We may consider an operation on the set of these four moves which consists of performing moves successively. For example, if we move horizontally and then vertically, we end up with the same result as if we ad moved diagonally:
+
+\begin{equation*}
+H * V = D
+\end{equation*}
+
+If we perform two horizontal moves in succession, we end up where we started: $H * H = I$. And so on. 
+
+\bigskip
+\noindent\textbf{(a)} If $G = \{V, H, D, I \}$, and $*$ is the operation just described, write the table of $G$. \\
+
+\begin{tabular}{c | c c c c}
+$*$ & $I$ & $V$ & $H$ & $D$ \\
+\hline
+$I$ & $I$ & $V$ & $H$ & $D$ \\
+$V$ & $V$ & $I$ & $D$ & $H$ \\
+$H$ & $H$ & $D$ & $I$ & $V$ \\
+$D$ & $D$ & $H$ & $V$ & $I$
+\end{tabular}
+
+
+\bigskip
+\noindent\textbf{(b)}
+Granted associativity, $\langle G, * \rangle$ is a group because as we see from the table in part (a), there is an identity element $I$ and every element in $G$ has an inverse.
+
+\bigskip
+
+\noindent\textbf{E. A Coin Game} \smallskip
+
 
 \end{document}
